@@ -44,8 +44,6 @@ public class Cadastrar extends AppCompatActivity {
 
                 MylivroDao.Inserir(new Livro(titulo.getText().toString(),autor.getText().toString(),lancamento,avaliacao));
 
-                Log.i("TESTE", Arrays.toString(MylivroDao.listAll()));
-
                 setResult(RESULT_OK);
                 finish();
             }

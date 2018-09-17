@@ -18,7 +18,6 @@ public class Listar extends AppCompatActivity {
     AppDatabase db;
     LivroDao MylivroDao;
     List<Livro> listaLivros;
-    Livro livro;
     int livro_atual;
 
     @Override
@@ -36,9 +35,7 @@ public class Listar extends AppCompatActivity {
         anolistar = findViewById(R.id.anolistar);
         notalistar = findViewById(R.id.notalistar);
 
-        MylivroDao.listAll();
-
-        livro_atual = 0;
+        listaLivros = MylivroDao.listAll();
 
         //inicializar o contador para paginar
         livro_atual = 0;
@@ -49,8 +46,6 @@ public class Listar extends AppCompatActivity {
         anolistar.setText(String.valueOf(listaLivros.get(livro_atual).getAno()));
         notalistar.setText(String.valueOf(listaLivros.get(livro_atual).getNota()));
 
-        //desabilitar o botao anterior, já que o primeiro livro
-        anterior.setEnabled(false);
 
         //botao para paginar para o proximo livro da lista
         proximo.setOnClickListener(new View.OnClickListener() {

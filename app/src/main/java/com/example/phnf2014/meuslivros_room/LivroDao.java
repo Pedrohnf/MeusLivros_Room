@@ -6,6 +6,8 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import java.util.List;
+
 @Dao
 public interface LivroDao {
 
@@ -19,9 +21,9 @@ public interface LivroDao {
     int Atualizar(Livro livro);
 
     @Query("SELECT * FROM tabela_livro")
-    Livro[] listAll();
+    List<Livro> listAll();
 
     @Query("SELECT * FROM tabela_livro WHERE id = :id")
-    Livro[] listById(long id);
+    List<Livro> listById(long id);
 
 }
