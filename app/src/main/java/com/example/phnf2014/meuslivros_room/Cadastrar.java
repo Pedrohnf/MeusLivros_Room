@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -42,11 +43,12 @@ public class Cadastrar extends AppCompatActivity {
                 float avaliacao = nota.getRating();
                 int lancamento = Integer.parseInt(ano.getText().toString());
 
-                MylivroDao.Inserir(new Livro(titulo.getText().toString(),autor.getText().toString(),lancamento,avaliacao));
+                    MylivroDao.Inserir(new Livro(titulo.getText().toString(), autor.getText().toString(), lancamento, avaliacao));
 
-                setResult(RESULT_OK);
-                finish();
-            }
+                    setResult(RESULT_OK);
+                    finish();
+                }
+
         });
 
 

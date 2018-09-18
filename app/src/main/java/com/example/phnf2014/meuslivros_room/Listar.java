@@ -37,6 +37,15 @@ public class Listar extends AppCompatActivity {
 
         listaLivros = MylivroDao.listAll();
 
+        if(listaLivros.isEmpty()){
+
+            finish();
+            Toast.makeText(this, "Não há Registro de Livro Cadastrado", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        anterior.setEnabled(true);
+
         //inicializar o contador para paginar
         livro_atual = 0;
 
